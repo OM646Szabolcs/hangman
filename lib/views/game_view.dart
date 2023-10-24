@@ -18,13 +18,26 @@ class GameView extends StatelessWidget {
         ),
         body: Column(
           children: [
+            Image.asset("images/${controller.hibakSzama()}.png"),
             Text(controller.randomSzoveg),
             Text(controller.csillagosSzoveg),
-            CupertinoButton(
-              child: Text("Generálj ujjat"),
-              onPressed: () {controller.randomSzovegGeneralasa();
-                },
-              )
+            Column(
+              children: [
+                Row(
+                  children: [
+                    CupertinoButton.filled(
+                    padding: EdgeInsets.zero, 
+                    child: Text("A"),
+                    onPressed: () {
+                    controller.tippHozzaadasa("A");
+                    })
+                  ],
+                )
+              ],
+            )
+            
+                
+              
             ],
           ),
         );
@@ -32,3 +45,9 @@ class GameView extends StatelessWidget {
     );
   }
 }
+
+
+
+//CupertinoButton(
+  //            child: Text("Generálj ujjat"),
+   //           onPressed: () {controller.randomSzovegGeneralasa();
